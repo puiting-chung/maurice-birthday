@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Alles Gute zum Geburtstag!</title>
+  <style>
+    body {
+      background-image: url('https://github.com/puiting-chung/maurice-birthday/raw/main/rhein.JPEG');
+      background-size: cover;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+    h1 {
+      color: #ff3399;
+    }
+    .balloon {
+      display: inline-block;
+      width: 100px;
+      height: 130px;
+      border-radius: 50% 50% 45% 45%;
+      position: relative;
+      margin: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .balloon:nth-child(1) {
+      background-image: url('https://github.com/puiting-chung/maurice-birthday/raw/main/IMG_2912.jpg');
+      background-size: cover;
+    }
+    .balloon:nth-child(2) {
+      background-image: url('https://github.com/puiting-chung/maurice-birthday/raw/main/IMG_8027.jpg');
+      background-size: cover;
+    }
+    .balloon:nth-child(3) {
+      background-image: url('https://github.com/puiting-chung/maurice-birthday/raw/main/IMG_8152.JPEG');
+      background-size: cover;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #333;
+      transform: translateX(-50%);
+    }
+    .popped {
+      background: none;
+      border: 2px dashed #ff3399;
+      color: #cc0066;
+      font-size: 14px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Alles Gute zum Geburtstag, Maurice! 🎈</h1>
+  <p>Klicke auf die Luftballons und entdecke deine Geburtstagswünsche! 💖</p>
+
+  <div class="balloon" onclick="popBalloon(this)"></div>
+  <div class="balloon" onclick="popBalloon(this)"></div>
+  <div class="balloon" onclick="popBalloon(this)"></div>
+
+  <script>
+    const messages = [
+      "Du bist wunderbar, Maurice! 🌟",
+      "Bleib so zauberhaft, Maurice! ✨",
+      "Ich wünsche dir endlose Freude, Maurice! 🎂"
+    ];
+
+    function popBalloon(balloon) {
+      if (!balloon.classList.contains('popped')) {
+        const msg = messages[Math.floor(Math.random() * messages.length)];
+        balloon.classList.add('popped');
+        balloon.innerText = msg;
+      }
+    }
+  </script>
+
+  <p style="margin-top: 40px;">Mit ❤️ nur für dich gemacht!</p>
+
+</body>
+</html>
